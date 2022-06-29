@@ -8,9 +8,14 @@
 const pickProps = (obj, props) => {
     // put your code here
     let result = {};
+    for (let prop in obj) {
+        if (props.includes(prop)) {
+            result[prop] = obj[prop];
+        }
+    }
     return result;
-    };
+};
 
 // examples
-console.log(pickProps({ a: 1, b: 2, c: 3 }, ['a', 'c'])); // ==> { a: 1, c: 3 }
-/* pickProps({ a: 1, b: 2, c: 3 }, ['a', 'c', 'd', 'hex']); // ==> { a: 1, c: 3 } */
+
+console.log(pickProps({ a: 1, b: 2, c: 3 }, ['a', 'c', 'd', 'hex'])); // ==> { a: 1, c: 3 }
