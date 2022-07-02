@@ -1,8 +1,7 @@
 function reverseString(string) {
-    if (typeof string !== 'string') {
-        return null;
-    }
-    return string.split('').reverse().join('');
+  if (typeof string !== 'string') {
+    return null;
+  }
+  return string.split('').reverse().join('');
 }
 console.log(reverseString('asfsdssafdsf')); // fsdfassdsfsa
-ss;
