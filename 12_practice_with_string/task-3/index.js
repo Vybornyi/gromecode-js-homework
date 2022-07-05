@@ -1,12 +1,9 @@
-const replace = el => el.replace(/\s+/g, '');
-
-function cleanTransactionsList(transactionsArr) {
-    const containsAnyLetter = str => /[a-zA-Z]/.test(str);
-    const copyArr = transactionsArr.slice(0);
-    const filtAnyLetter = copyArr.filter(el => !containsAnyLetter(el));
-    return filtAnyLetter.map(el => `$${parseFloat(el).toFixed(2)}`);
+function cleanTransactionsList(transactions) {
+    const transactionsWithoutLetters = transactions.filter(element => !/[a-zA-Z]/.test(element));
+    const clearTransactions = transactionsWithoutLetters.map(el => '$' + parseFloat(el).toFixed(2));
+    return clearTransactions;
 }
 const arr = [' 1.9', '16.4', 13, 'sdgdgs', ' 1 dollar'];
-console.log(arr.map(el => String(el).trim()));
-console.log(cleanTransactionsList(arrS));
-console.log(arrS);
+
+console.log(cleanTransactionsList(arr));
+console.log(arr);
