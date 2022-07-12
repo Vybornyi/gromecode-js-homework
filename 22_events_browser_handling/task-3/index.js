@@ -1,14 +1,7 @@
-export function getItemsList() {
-  const elementsList = document.querySelectorAll('.technology');
-  console.dir(elementsList);
-  return elementsList;
-}
-getItemsList();
-
-export function getItemsArray() {
-  const NodeList = document.querySelectorAll('.tool');
-  const elementsArray = Array.from(NodeList);
-  console.dir(elementsArray);
-  return elementsArray;
-}
-getItemsArray();
+const textInput = document.querySelector('.text-input');
+const consoleTextInputFunc = () => {
+  const result = textInput.value;
+  console.log(result);
+};
+const consoleTextInput = consoleTextInputFunc.bind(null);
+textInput.addEventListener('change', consoleTextInput);
