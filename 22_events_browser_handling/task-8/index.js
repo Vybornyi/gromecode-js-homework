@@ -1,6 +1,6 @@
-function createButton(buttonText) {
-  const btn = document.createElement('button');
-  btn.textContent = buttonText;
-  document.body.append(btn);
-}
-createButton('dfsdg');
+const input = document.querySelector('.text-input');
+const consoleInputTextFunc = event => {
+  console.log(event.target.value);
+};
+const consoleInputText = consoleInputTextFunc.bind(null);
+input.addEventListener('change', consoleInputText);

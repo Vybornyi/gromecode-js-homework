@@ -1,8 +1,6 @@
-function finishForm() {
-  const inputForm = document.createElement('input');
-  inputForm.type = 'text';
-  inputForm.name = 'login';
-  document.querySelector('.login-form').prepend(inputForm);
-  document.querySelector('.login-form').lastElementChild.setAttribute('type', 'password');
-}
-finishForm();
+const btnSelectAll = document.querySelectorAll('.pagination__page');
+const handleClickFunc = event => {
+  console.log(event.target.dataset.pageNumber);
+};
+const handleClick = handleClickFunc.bind(null);
+btnSelectAll.forEach(el => el.addEventListener('click', handleClick));
