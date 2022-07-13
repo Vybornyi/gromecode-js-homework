@@ -39,5 +39,5 @@ class Order {
 }
 const order1 = new Order('1005', 'Kyiv', 'Buy');
 console.log(order1);
-order1.confirmedOrder();
-console.log(order1);
+
+console.log(Math.random(0, Infinity));
