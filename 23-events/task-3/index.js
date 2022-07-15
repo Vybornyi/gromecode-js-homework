@@ -1,4 +1,4 @@
-/* const tasks = [
+const tasks = [
   { text: 'Buy milk', done: false, id: Math.random().toString(10).substring(2, 9) },
   { text: 'Pick up Tom from airport', done: false, id: Math.random().toString(10).substring(2, 9) },
   { text: 'Visit party', done: false, id: Math.random().toString(10).substring(2, 9) },
@@ -64,8 +64,8 @@ const changeClassFunc = event => {
 };
 const changeClass = changeClassFunc.bind(null);
 listElem.addEventListener('click', changeClass);
- */
-const tasks = [
+
+/* const tasks = [
   { text: 'Buy milk', done: false },
   { text: 'Pick up Tom from airport', done: false },
   { text: 'Visit party', done: false },
@@ -136,4 +136,4 @@ function onChangeCheckbox(event) {
   renderTasks(tasks);
 }
 
-listElem.addEventListener('click', onChangeCheckbox);
+listElem.addEventListener('click', onChangeCheckbox); */
