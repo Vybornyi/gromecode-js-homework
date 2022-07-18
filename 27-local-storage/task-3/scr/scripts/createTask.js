@@ -30,14 +30,14 @@ export const onCreateTask = () => {
     return;
   }
   taskTitleInputElem.value = '';
-  const tasksList = getItem('taskList') || [];
-  const newTaskList = tasksList.concat({
+  const tasksList = getItem('tasksList') || [];
+  const newTasksList = tasksList.concat({
     text,
     done: false,
     createDate: new Date().toISOString(),
     id: Math.random().toString(),
   });
-  setItem('taskList', newTaskList);
+  setItem('tasksList', newTasksList);
 
   renderTasks();
 };
