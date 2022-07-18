@@ -1,30 +1,30 @@
-import { getItem, setItem } from './storage.js';
+/* import { getItem, setItem } from './storage.js';
 import { renderTasks } from './rendered.js';
 
 export const btnAddTask = () => {
   const taskInput = document.querySelector('.task-input');
   const listElem = document.querySelector('.list');
-  const inputValue = taskInput.value;
-  if (inputValue.length === 0) {
+  const text = taskInput.value;
+
+  if (text.length === 0) {
     return;
   }
   const tasksList = getItem('taskList') || [];
   const newTaskList = tasksList.concat({
-    inputValue,
+    text,
     done: false,
     id: Math.random().toString(),
   });
-  setItem('tasksList', newTaskList);
-  taskInput.value = '';
-  listElem.innerHTML = '';
-  renderTasks();
-};
 
-/* import { renderTasks } from './rendered.js';
-import { getItem, setItem } from './storage';
+  setItem('tasksList', newTaskList);
+  console.log(newTaskList);
+}; */
+
+import { renderTasks } from './rendered.js';
+import { getItem, setItem } from './storage.js';
 
 export const onCreateTask = () => {
-  const taskTitleInputElem = document.querySelector('.task - input');
+  const taskTitleInputElem = document.querySelector('.task-input');
   const text = taskTitleInputElem.value;
   if (!text) {
     return;
@@ -37,7 +37,7 @@ export const onCreateTask = () => {
     createDate: new Date().toISOString(),
     id: Math.random().toString(),
   });
-  setItem('tasksList', newTaskList);
+  setItem('taskList', newTaskList);
+
   renderTasks();
 };
- */

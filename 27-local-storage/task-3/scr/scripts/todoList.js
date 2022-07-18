@@ -1,11 +1,9 @@
-import { changeClassFunc } from './updateTask.js';
-import { btnAddTask } from './createTask';
+import { onToggleTask } from './updateTask.js';
+import { onCreateTask } from './createTask.js';
 
 export const initTodoListHandlers = () => {
   const createBtn = document.querySelector('.create-task-btn');
-  createBtn.addEventListener('click', btnAddTask);
-
+  createBtn.addEventListener('click', onCreateTask);
   const listElem = document.querySelector('.list');
-  const changeClass = changeClassFunc.bind(null);
-  listElem.addEventListener('click', changeClass);
+  listElem.addEventListener('click', onToggleTask);
 };
