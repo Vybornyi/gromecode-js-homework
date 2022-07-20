@@ -23,5 +23,5 @@ const calc = initValue => {
   };
   return calculator;
 };
-const res = calc(3).add(2).mult(4).div(10).substract(5).result();
+const res = calc(3).add(2).add(2).result();
 console.log(res);

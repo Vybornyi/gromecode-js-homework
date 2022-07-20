@@ -3,51 +3,56 @@ const shmoment = initValue => {
 
   const methods = {
     add(value, number) {
-      let newValue;
       if (value === 'years') {
-        result = result.setFullYear(result.getFullYear() + number);
+        result = new Date(result.setFullYear(result.getFullYear() + number));
       } else if (value === 'months') {
-        newValue = result.setMonth(result.getMonth() + number);
+        result = new Date(result.setMonth(result.getMonth() + number));
       } else if (value === 'days') {
-        newValue = result.setDay(result.getDay() + number);
+        result = new Date(result.setDate(result.getDate() + number));
       } else if (value === 'hours') {
-        newValue = result.setHours(result.getHours() + number);
+        result = new Date(result.setHours(result.getHours() + number));
       } else if (value === 'minutes') {
-        newValue = result.setMinutes(result.getMinutes() + number);
+        result = new Date(result.setMinutes(result.getMinutes() + number));
       } else if (value === 'seconds') {
-        newValue = result.setSeconds(result.getSeconds() + number);
+        result = new Date(result.setSeconds(result.getSeconds() + number));
       } else if (value === 'milliseconds') {
-        newValue = result.setMilliseconds(result.getMilliseconds() + number);
+        result = new Date(result.setMilliseconds(result.getMilliseconds() + number));
       }
-      result = newValue;
       return this;
     },
 
     subtract(value, number) {
-      let newValue;
       if (value === 'years') {
-        newValue = result.setFullYear(result.getFullYear() - number);
+        result = new Date(result.setFullYear(result.getFullYear() - number));
       } else if (value === 'months') {
-        newValue = result.setMonth(result.getMonth() - number);
+        result = new Date(result.setMonth(result.getMonth() - number));
       } else if (value === 'days') {
-        newValue = result.setDay(result.getDay() - number);
+        result = new Date(result.setDate(result.getDate() - number));
       } else if (value === 'hours') {
-        newValue = result.setHours(result.getHours() - number);
+        result = new Date(result.setHours(result.getHours() - number));
       } else if (value === 'minutes') {
-        newValue = result.setMinutes(result.getMinutes() - number);
+        result = new Date(result.setMinutes(result.getMinutes() - number));
       } else if (value === 'seconds') {
-        newValue = result.setSeconds(result.getSeconds() - number);
+        result = new Date(result.setSeconds(result.getSeconds() - number));
       } else if (value === 'milliseconds') {
-        newValue = result.setMilliseconds(result.getMilliseconds() - number);
+        result = new Date(result.setMilliseconds(result.getMilliseconds() - number));
       }
-      result = newValue;
       return this;
     },
 
     result() {
-      return new Date(result);
+      return result;
     },
   };
   return methods;
 };
-console.log(shmoment(new Date(2020, 0, 7, 17, 17, 17)).add('years', 10).result());
+console.log(
+  shmoment(new Date(2020, 0, 7, 17, 17, 17))
+    .add('years', 10)
+    .add('years', 10)
+    .add('months', 10)
+    .add('days', 10)
+    .subtract('months', 10)
+    .subtract('years', 10)
+    .result(),
+);
